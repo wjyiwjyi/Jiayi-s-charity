@@ -1,0 +1,19 @@
+create table if not exists `goods`(
+  `id` int unsigned auto_increment,
+	`kind` varchar(100) not null,
+	`quantity` int not null,
+	`amount` int not null,
+	`targetLocation` varchar(250) not null,
+	`donor` varchar(100) not null,
+	`storeLocation` varchar(250) not null,
+	`checkOut` boolean not null,
+	PRIMARY KEY(`id`)
+)ENGINE=InnoDB Default charset=utf8;
+
+create table user(
+	uid int not null auto_increment, 
+	uname varchar(20) not null unique,
+	upass varchar(250) not null,
+	uemail varchar(20) null,
+	primary key (uid)
+)engine=InnoDB default charset=utf8;
