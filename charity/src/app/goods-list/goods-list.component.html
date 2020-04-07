@@ -1,0 +1,58 @@
+<div class="goodsList">
+	<mat-form-field>
+		<mat-label>Filter</mat-label>
+		<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Wuhan">
+	</mat-form-field>
+
+	<div class="mat-elevation-z8">
+		<table mat-table [dataSource]="dataSource" matSort>
+
+			<ng-container matColumnDef="id">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 物资编号 </th>
+				<td mat-cell *matCellDef="let row"> {{row.id}} </td>
+			</ng-container>
+
+			<ng-container matColumnDef="kind">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 种类 </th>
+				<td mat-cell *matCellDef="let row"> {{row.kind}} </td>
+			</ng-container>
+
+			<ng-container matColumnDef="quantity">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 数量（单位/个） </th>
+				<td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+			</ng-container>
+
+			<ng-container matColumnDef="amount">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 价值 </th>
+				<td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.amount}} </td>
+			</ng-container>
+			
+			<ng-container matColumnDef="targetLocation">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 目的捐赠地点 </th>
+				<td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.targetLocation}} </td>
+			</ng-container>
+			
+			<ng-container matColumnDef="donor">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 捐赠人 </th>
+				<td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.donor}} </td>
+			</ng-container>
+			
+			<ng-container matColumnDef="storeLocation">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 存放地点 </th>
+				<td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.storeLocation}} </td>
+			</ng-container>
+			
+			<ng-container matColumnDef="checkOut">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> 是否出库 </th>
+				<td mat-cell *matCellDef="let row" [style.color]="row.color">
+					<div *ngIf="row.checkOut">是</div>
+					<div *ngIf="!row.checkOut">否</div>
+				</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;">
+			</tr>
+		</table>
+	</div>
+</div>

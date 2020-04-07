@@ -1,0 +1,13 @@
+.checkin {
+	border: 2px solid #2196F3;
+	max-width: 500px;
+	margin: 16px auto;
+	padding: 20px;
+	color: black;
+}
+
+.title {
+	text-align: center;
+}
+
+

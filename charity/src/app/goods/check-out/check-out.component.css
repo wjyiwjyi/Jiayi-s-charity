@@ -1,0 +1,20 @@
+.checkout {
+	text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 10%;
+}
+
+.goodsList {
+	margin: 32px;
+}

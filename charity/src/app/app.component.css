@@ -1,0 +1,10 @@
+/* Application-wide Styles */
+.title {
+	text-align: center;
+	background-color: #2196F3;
+	color: white;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	padding: 8px;
+	margin-bottom: 32px;
+}
+
